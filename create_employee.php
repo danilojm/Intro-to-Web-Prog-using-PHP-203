@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO employees (first_name, last_name, company_name, hours_worked) VALUES ('$first_name', '$last_name', '$company_name', '$hours_worked')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Connection successful";
+        echo "Create Successful";
         header("Location: view_employees.php");
         exit();
     } else {

@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="css/styles.css">
-    <title>Add Employee</title>
+    <title>Georgian Employee List</title>
 </head>
 
 <body>
@@ -18,7 +18,6 @@
                     <li><a href="view_employees.php">View Employees</a></li>
                 </ul>
             </nav>
-        </div>
         </div>
     </header>
 
@@ -39,14 +38,19 @@
                         <th>Last Name</th>
                         <th>Company's Name</th>
                         <th>Hours Worked</th>
+                        <th>Actions</th> <!-- Added a new column for actions -->
                       </tr>";
                 while ($row = $result->fetch_assoc()) {
                     echo
-                    "<tr>
+                        "<tr>
                             <td>" . $row["first_name"] . "</td>
                             <td>" . $row["last_name"] . "</td>
                             <td>" . $row["company_name"] . "</td>
                             <td>" . $row["hours_worked"] . "</td>
+                            <td>
+                                <a class='edit-button' href='edit_employee.php?id=" . $row["id"] . "'>Edit</a> |
+                                <a class='delete-button' href='delete_employee.php?id=" . $row["id"] . "'>Delete</a>
+                            </td>
                         </tr>";
                 }
                 echo "</table>";
@@ -58,9 +62,10 @@
             ?>
         </form>
     </body>
-
     <footer>
-        &copy; <?php echo date("Y"); ?> Intro to Web Prog using PHP - 203 | Danilo Mendes de Oliveira | Student Nº 200549002 | Georgian@ILAC | Professor Dr. Gurleen Kaur
+        &copy;
+        <?php echo date("Y"); ?> Intro to Web Prog using PHP - 203 | Danilo Mendes de Oliveira | Student Nº 200549002 |
+        Georgian@ILAC | Professor Dr. Gurleen Kaur
     </footer>
 </body>
 
