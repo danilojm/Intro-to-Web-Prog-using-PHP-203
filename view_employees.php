@@ -63,7 +63,7 @@
 
             <script>
                 function confirmDelete(id) {
-                    var userConfirmed = confirm("Tem certeza que deseja deletar este registro?");
+                    var userConfirmed = confirm("Tem certeza que deseja deletar o registro?");
                     if (userConfirmed) {
                         window.location.href = 'delete_employee.php?id=' + id + '&confirm=yes';
                     }
