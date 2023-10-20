@@ -22,7 +22,7 @@
     </header>
 
     <body>
-        <form method="post" action="update_employee.php" onsubmit="updateEmployee()">
+        <form method="post" action="update_employee.php">
             <h1>Edit Employee</h1>
 
             <?php
@@ -52,7 +52,6 @@
             $conn->close();
             ?>
         </form>
-        <div id="message" style="display: none;"></div>
     </body>
     <footer>
         &copy;

@@ -38,7 +38,7 @@
                         <th>Last Name</th>
                         <th>Company's Name</th>
                         <th>Hours Worked</th>
-                        <th>Actions</th> <!-- Added a new column for actions -->
+                        <th>Actions</th>
                       </tr>";
                 while ($row = $result->fetch_assoc()) {
                     echo
@@ -47,9 +47,9 @@
                             <td>" . $row["last_name"] . "</td>
                             <td>" . $row["company_name"] . "</td>
                             <td>" . $row["hours_worked"] . "</td>
-                            <td>
+                            <td class='buttons-collumn'>
                                 <a class='edit-button' href='edit_employee.php?id=" . $row["id"] . "'>Edit</a> |
-                                <a class='delete-button' href='delete_employee.php?id=" . $row["id"] . "'>Delete</a>
+                                <a class='delete-button' href='javascript:void(0);' onclick='confirmDelete(" . $row["id"] . ")'>Delete</a>
                             </td>
                         </tr>";
                 }
@@ -60,6 +60,15 @@
 
             $conn->close();
             ?>
+
+            <script>
+                function confirmDelete(id) {
+                    var userConfirmed = confirm("Tem certeza que deseja deletar este registro?");
+                    if (userConfirmed) {
+                        window.location.href = 'delete_employee.php?id=' + id + '&confirm=yes';
+                    }
+                }
+            </script>
         </form>
     </body>
     <footer>
