@@ -15,3 +15,7 @@ This web project was developed as part of the "Intro to Web Prog using PHP - 203
 
 - **College:** Georgian@ILAC
 - **Professor:** Dr. Gurleen Kaur
+
+
+## First Admin User Instruction
+- To create the first admin user, it is necessary to create a user normally on the registration page, and in the database change his permission in the 'is_admin' field from 0 to 1
